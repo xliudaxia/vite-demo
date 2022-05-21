@@ -1,0 +1,28 @@
+{
+  "name": "vite-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start":"vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xliudaxia/vite-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xliudaxia/vite-demo/issues"
+  },
+  "homepage": "https://github.com/xliudaxia/vite-demo#readme",
+  "dependencies": {
+    "antd": "^4.20.5",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "devDependencies": {
+    "vite": "^2.9.9"
+  }
+}
