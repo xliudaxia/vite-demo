@@ -1,48 +1,22 @@
-import { Switch, Typography } from 'antd';
-import React, { useState } from 'react';
+import React,{useRef} from 'react'
+import { Button } from 'antd';
+import { message } from 'react-message-popup'
 
-const { Paragraph, Text } = Typography;
 
-const App: React.FC = () => {
-  const [ellipsis, setEllipsis] = useState(true);
 
-  return (
-    <>
-      <Switch
-        checked={ellipsis}
-        onChange={() => {
-          setEllipsis(!ellipsis);
-        }}
-      />
+export default () => {
+  const buttonRef  = useRef();
+  const click = async ()=>{
+    buttonRef && buttonRef.current?.blur();
+    message.loading('Loading...', 4000)
 
-      <Paragraph ellipsis={ellipsis}>
-        Ant Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team.
-      </Paragraph>
-
-      <Paragraph ellipsis={ellipsis ? { rows: 2, expandable: true, symbol: 'more' } : false}>
-        Ant Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team. Ant
-        Design, a design language for background applications, is refined by Ant UED Team.
-      </Paragraph>
-
-      <Text
-        style={ellipsis ? { width: 100 } : undefined}
-        ellipsis={ellipsis ? { tooltip: 'I am ellipsis now!',onEllipsis(){
-          console.log('执行了')
-        } } : false}
-      >
-        Ant Design, a design language for background applications, is refined by Ant UED Team.
-      </Text>
-    </>
-  );
-};
-
-export default App;
+  }
+  return <>
+  <Button onClick={click} ref={buttonRef} type="primary">Primary Button</Button>
+  <Button>Default Button</Button>
+  <Button type="dashed">Dashed Button</Button>
+  <br />
+  <Button type="text">Text Button</Button>
+  <Button type="link">Link Button</Button>
+</>
+}
