@@ -1,10 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom'
-import App from './src/Demo';
-import Test from './src/Upload'
-// import Table from './src/Table'
-import {LoadingIcon} from './src/Logo'
-import 'antd/dist/antd.css'
+import ReactDOM from 'react-dom';
+import Demo from './src/Demo'
 
 const container = document.getElementById('root');
-ReactDOM.render(<LoadingIcon/>,container)
+
+ReactDOM.render(<Demo />,container)
